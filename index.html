@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- red dice -->
+        <div class="dice red-dice">
+            <div class="dot dot1" id="red-dot1"></div>
+            <div class="dot dot2 hide" id="red-dot2"></div>
+            <div class="dot dot3 hide" id="red-dot3"></div>
+            <div class="dot dot4 hide" id="red-dot4"></div>
+            <div class="dot dot5 hide" id="red-dot5"></div>
+            <div class="dot dot6 hide" id="red-dot6"></div>
+            <div class="dot dot7 hide" id="red-dot7"></div>
+        </div>
+        <button class="roll-btn red-roll-btn">Roll</button>
+
+        <!-- green dice -->
+        <div class="dice green-dice">
+            <div class="dot dot1"></div>
+            <div class="dot dot2 hide"></div>
+            <div class="dot dot3 hide"></div>
+            <div class="dot dot4 hide"></div>
+            <div class="dot dot5 hide"></div>
+            <div class="dot dot6 hide"></div>
+        </div>
+        <button class="roll-btn green-roll-btn">Roll</button>
+
+        <!-- blue dice -->
+        <div class="dice blue-dice">
+            <div class="dot dot1"></div>
+            <div class="dot dot2 hide"></div>
+            <div class="dot dot3 hide"></div>
+            <div class="dot dot4 hide"></div>
+            <div class="dot dot5 hide"></div>
+            <div class="dot dot6 hide"></div>
+        </div>
+        <button class="roll-btn blue-roll-btn">Roll</button>
+
+        <!-- yellow dice -->
+        <div class="dice yellow-dice">
+            <div class="dot dot1"></div>
+            <div class="dot dot2 hide"></div>
+            <div class="dot dot3 hide"></div>
+            <div class="dot dot4 hide"></div>
+            <div class="dot dot5 hide"></div>
+            <div class="dot dot6 hide"></div>
+        </div>
+        <button class="roll-btn yellow-roll-btn">Roll</button>
+
+        <!-- Players -->
+        <span class="player player-1">Player 1</span>
+        <span class="player player-2">Player 2</span>
+        <span class="player player-3">Player 3</span>
+        <span class="player player-4">Player 4</span>
+
+        <div class="row-1">
+            <!-- red home -->
+            <div class="red-box">
+                <div class="red-box-inside">
+                    <div id="red-circle-1" class="red-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="red-circle-2" class="red-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="red-circle-3" class="red-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="red-circle-4" class="red-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- green path -->
+            <div class="green-area">
+                <div class="green-area-lines">
+                    <div class="green-area-box border-top no-border-left"></div>
+                    <div class="green-area-box no-border-left"></div>
+                    <div class="green-area-box no-border-left bg-green icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <div class="green-area-box no-border-left"></div>
+                    <div class="green-area-box no-border-left"></div>
+                    <div class="green-area-box no-border-left"></div>
+                </div>
+                <div class="green-area-lines">
+                    <div class="green-area-box border-top"></div>
+                    <div class="green-area-box bg-green"></div>
+                    <div class="green-area-box bg-green"></div>
+                    <div class="green-area-box bg-green"></div>
+                    <div class="green-area-box bg-green"></div>
+                    <div class="green-area-box bg-green"></div>
+                </div>
+                <div class="green-area-lines">
+                    <div class="green-area-box border-top"></div>
+                    <div class="green-area-box bg-green icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <div class="green-area-box"></div>
+                    <div class="green-area-box"></div>
+                    <div class="green-area-box"></div>
+                    <div class="green-area-box"></div>
+                </div>
+            </div>
+
+            <!-- green home -->
+            <div class="green-box">
+                <div class="green-box-inside">
+                    <div id="green-circle-1" class="green-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="green-circle-2" class="green-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="green-circle-3" class="green-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="green-circle-4" class="green-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-2">
+            <!-- red path -->
+            <div class="red-area">
+                <div class="red-area-lines">
+                    <div class="red-area-box"></div>
+                    <div class="red-area-box"></div>
+                    <div class="red-area-box"></div>
+                </div>
+                <div class="red-area-lines">
+                    <div class="red-area-box bg-red icon red-path-1">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <div class="red-area-box bg-red"></div>
+                    <div class="red-area-box"></div>
+                </div>
+                <div class="red-area-lines">
+                    <div class="red-area-box red-path-2"></div>
+                    <div class="red-area-box bg-red"></div>
+                    <div class="red-area-box bg-red icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                </div>
+                <div class="red-area-lines">
+                    <div class="red-area-box red-path-3"></div>
+                    <div class="red-area-box bg-red"></div>
+                    <div class="red-area-box"></div>
+                </div>
+                <div class="red-area-lines">
+                    <div class="red-area-box red-path-4"></div>
+                    <div class="red-area-box bg-red"></div>
+                    <div class="red-area-box"></div>
+                </div>
+                <div class="red-area-lines">
+                    <div class="red-area-box border-right red-path-5"></div>
+                    <div class="red-area-box border-right bg-red"></div>
+                    <div class="red-area-box border-right"></div>
+                </div>
+            </div>
+
+            <!-- winner area -->
+            <div class="winner-area">
+                <div class="winner-area-lines">
+                    <div class="winner-area-box no-border-left"></div>
+                    <div class="winner-area-box no-border-left bg-red icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="winner-area-box no-border-left no-border-bottom"></div>
+                </div>
+                <div class="winner-area-lines">
+                    <div class="winner-area-box bg-green icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="winner-area-box icon">
+                        <span class="text">Ludo</span>
+                    </div>
+                    <div class="winner-area-box no-border-bottom bg-blue icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                </div>
+                <div class="winner-area-lines">
+                    <div class="winner-area-box"></div>
+                    <div class="winner-area-box bg-yellow icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="winner-area-box no-border-bottom"></div>
+                </div>
+            </div>
+
+            <!-- yellow path -->
+            <div class="yellow-area">
+                <div class="yellow-area-lines">
+                    <div class="yellow-area-box"></div>
+                    <div class="yellow-area-box bg-yellow"></div>
+                    <div class="yellow-area-box"></div>
+                </div>
+                <div class="yellow-area-lines">
+                    <div class="yellow-area-box"></div>
+                    <div class="yellow-area-box bg-yellow"></div>
+                    <div class="yellow-area-box"></div>
+                </div>
+                <div class="yellow-area-lines">
+                    <div class="yellow-area-box"></div>
+                    <div class="yellow-area-box bg-yellow"></div>
+                    <div class="yellow-area-box"></div>
+                </div>
+                <div class="yellow-area-lines">
+                    <div class="yellow-area-box bg-yellow icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <div class="yellow-area-box bg-yellow"></div>
+                    <div class="yellow-area-box"></div>
+                </div>
+                <div class="yellow-area-lines">
+                    <div class="yellow-area-box"></div>
+                    <div class="yellow-area-box bg-yellow"></div>
+                    <div class="yellow-area-box bg-yellow icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                </div>
+                <div class="yellow-area-lines">
+                    <div class="yellow-area-box border-right"></div>
+                    <div class="yellow-area-box border-right"></div>
+                    <div class="yellow-area-box border-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-3">
+            <!-- red home -->
+            <div class="blue-box">
+                <div class="blue-box-inside">
+                    <div id="blue-circle-1" class="blue-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="blue-circle-2" class="blue-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="blue-circle-3" class="blue-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="blue-circle-4" class="blue-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- blue path -->
+            <div class="blue-area">
+                <div class="blue-area-lines">
+                    <div class="blue-area-box border-top no-border-left"></div>
+                    <div class="blue-area-box no-border-left"></div>
+                    <div class="blue-area-box no-border-left"></div>
+                    <div class="blue-area-box no-border-left"></div>
+                    <div class="blue-area-box no-border-left bg-blue icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <div class="blue-area-box no-border-left"></div>
+                </div>
+                <div class="blue-area-lines">
+                    <div class="blue-area-box border-top bg-blue"></div>
+                    <div class="blue-area-box bg-blue"></div>
+                    <div class="blue-area-box bg-blue"></div>
+                    <div class="blue-area-box bg-blue"></div>
+                    <div class="blue-area-box bg-blue"></div>
+                    <div class="blue-area-box"></div>
+                </div>
+                <div class="blue-area-lines">
+                    <div class="blue-area-box border-top"></div>
+                    <div class="blue-area-box"></div>
+                    <div class="blue-area-box"></div>
+                    <div class="blue-area-box bg-blue icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <div class="blue-area-box"></div>
+                    <div class="blue-area-box"></div>
+                </div>
+            </div>
+
+            <!-- yellow home -->
+            <div class="yellow-box">
+                <div class="yellow-box-inside">
+                    <div id="yellow-circle-1" class="yellow-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="yellow-circle-2" class="yellow-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="yellow-circle-3" class="yellow-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div id="yellow-circle-4" class="yellow-circle icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
